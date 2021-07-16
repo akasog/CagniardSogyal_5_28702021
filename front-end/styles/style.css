@@ -1,3 +1,60 @@
 .dancing {
     font-family: "Dancing Script";
 }
+
+.titlecolor {
+    color: #BEA25A;
+    margin: 0px 30px;
+}
+
+.text-style {
+    font-style: italic;
+    opacity: 70%;
+}
+
+.stripe {
+    height: 2px;
+    width: 100%;
+    color: black;
+}
+
+.flex-hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar-toggler,
+.navbar-toggler:focus,
+.navbar-toggler:active {
+    border: none;
+    outline: none;
+}
+
+.price {
+    font-weight: bold;
+    color: black;
+}
+
+.description {
+    font-style: italic;
+    color: black;
+    opacity: 70%;
+    font-size: 12px;
+}
+
+.card-size {
+    width: 310px;
+    padding-left: 10px;
+    text-decoration: none;
+    border: none;
+}
+
+.image-style {
+    border-radius: 10px;
+}
+
+.flex-main {
+    display: flex;
+    justify-content: space-between;
+}
