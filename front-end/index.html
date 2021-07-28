@@ -53,13 +53,26 @@
 
     <!--MAIN CONTENT-->
 
-    <figure id="products">
+    <figure id="product">
+      <a href="#" class="card mt-5 card-size">
+        <img id="product__img" src="" class="card-img-top image-style" alt="...">
+        <figcaption class="card-body">
+          <div class="flex-main">
+            <h2 id="product__title" class="card-title text-dark"></h2>
+            <p id="product__price" class="price"></p>
+          </div>
+            <p id="product__description" class="card-text description"></p>
+        </figcaption>
+      </a> 
+    </figure>
+
+    <figure id="">
       <a href="#" class="card mt-5 card-size">
         <img src="/front-end/img/vcam_1.jpg" class="card-img-top image-style" alt="...">
         <figcaption class="card-body">
           <div class="flex-main">
             <h2 class="card-title text-dark">Zurss 50S</h2>
-            <p class="price">499€</p>
+            <p class="price">499,00€</p>
           </div>
           <p class="card-text description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
         </figcaption>
@@ -75,14 +88,12 @@
 
     <footer>
       <div>
-        <a href="#">Nous contacter</a>
-        <a href="#">A propos</a>
       </div>
     </footer> 
 
     
     
-
+<script src="./js/index.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>    
 </body>
 </html>
