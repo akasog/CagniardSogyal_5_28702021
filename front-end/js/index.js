@@ -1,3 +1,41 @@
+fetch('http://localhost:3000/api/cameras')
+  .then(response => response.json())
+  .then(data =>{
+    
+  let img = new Image();
+  let nom;
+  let description;
+  let price; 
+
+
+    for (let i = 0; i < data.length; i++) {
+       console.log(data[i].name);
+       /*document.getElementById("list_content").innerHTML = document.getElementById("list_content").innerHTML + data[i].name */
+       /*document.getElementById("list_content").innerHTML += data[i].name */
+
+       img = document.createElement("img");
+       img.src = data[i].imageUrl;
+       document.getElementById("product").appendChild(img)
+
+       nom = document.createElement("h2");
+       nom.textContent = data[i].name;
+       document.getElementById("product").appendChild(nom)
+       
+       description = document.createElement("p");
+       description.textContent = data[i].description;
+       document.getElementById("product").appendChild(description)
+
+       price = document.createElement("p");
+       price.textContent = data[i].price;
+       document.getElementById("product").appendChild(price)
+    }
+
+  console.log(data)
+  })
+  .catch(error => alert(error))
+
+
+/*
 product ()
 
 async function product() {
