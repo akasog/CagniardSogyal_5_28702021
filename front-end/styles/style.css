@@ -31,30 +31,33 @@
     outline: none;
 }
 
-.price {
+.product--price {
     font-weight: bold;
     color: black;
 }
 
-.description {
+.product--description {
     font-style: italic;
     color: black;
     opacity: 70%;
     font-size: 12px;
 }
 
-.card-size {
+.product--cardsize {
     width: 310px;
     padding-left: 10px;
     text-decoration: none;
     border: none;
 }
 
-.image-style {
+.product--imagestyle {
+    display: block;
+    margin: auto;
+    width: 300px;
     border-radius: 10px;
 }
 
-.flex-main {
+.product--flexmain {
     display: flex;
     justify-content: space-between;
 }
