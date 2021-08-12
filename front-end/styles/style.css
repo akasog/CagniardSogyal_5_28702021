@@ -31,6 +31,14 @@
     outline: none;
 }
 
+#list_content {
+    margin-top: 50px;
+}
+
+a {
+    text-decoration: none;
+}
+
 .product--price {
     font-weight: bold;
     color: black;
@@ -44,7 +52,7 @@
 }
 
 .product--cardsize {
-    width: 310px;
+    width: 305px;
     padding-left: 10px;
     text-decoration: none;
     border: none;
@@ -57,7 +65,40 @@
     border-radius: 10px;
 }
 
+.title--price {
+    margin-top: 10px;
+}
+
 .product--flexmain {
     display: flex;
     justify-content: space-between;
+    color: black;
 }
+
+.footer {
+    background-color: #212529;
+    height: 100px;
+    padding-top: 10px;
+}
+
+.footer--list {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 0;
+    font-size: 0.9rem;
+}
+
+.footer--list li {
+    margin-bottom: 5px;
+}
+
+.footer--list a{
+    text-decoration: none;
+    color: white;
+}
+
+.footer--list a:hover{
+    font-weight: bold;
+}
+
