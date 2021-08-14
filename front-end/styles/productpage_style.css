@@ -1,3 +1,5 @@
+/*PRODUCT PAGES*/ 
+
 section {
     margin-top: 70px;
 }
@@ -9,23 +11,39 @@ section {
     border: none;
 }
 
-.product--name {
+.product--name{
     margin: 50px 0px 5px 0px;
     text-align: center;
-    font-weight: 400;
+    font-weight: 600;
 }
 
-.product--description {
+.product--description{
     margin-top: 10px;
 }
 
-.btncontainer {
+.product--selectprice{
+    width: 300px;
     display: flex;
-    justify-content: center;
-    padding: 15px 0px 40px 0px;
+    justify-content: space-between;
 }
 
-.container--addcartbtn {
+.product--price{
+    text-align: right;
+}
+
+.product--lenses{
+    margin-left: 10px;
+    width: 225px;
+    height: 30px;
+}
+
+.btncontainer{
+    display: flex;
+    justify-content: center;
+    padding: 15px 5px 40px 5px;
+}
+
+.container--addcartbtn{
     display: inline-block;
     background-color: #BEA25A;
     border-radius: 10px;
@@ -34,7 +52,7 @@ section {
     text-align: center;
     font-size: 20px;
     padding: 10px;
-    width: 295px;
+    width: 100%;
     max-width: 100%;
     
     -moz-transition: all 0.8s;
@@ -42,9 +60,9 @@ section {
     transition: all 0.8s;
 }
 
-.container--addcartbtn:hover {
-    -moz-transform: scale(1.06);
-    -webkit-transform: scale(1.06);
-    transform: scale(1.06);
+.container--addcartbtn:hover{
+    -moz-transform: scale(1.02);
+    -webkit-transform: scale(1.02);
+    transform: scale(1.02);
 }
 

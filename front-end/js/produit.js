@@ -9,16 +9,21 @@ fetch ("http://localhost:3000/api/cameras/"+ id)
     let div
     let btncontainer 
     let btn 
+    let selectprice
+    let select
+    let option
 
-    nom = document.createElement("h1");
-    nom.textContent = data.name;
-    document.getElementById("product_content").appendChild(nom);
-    nom.classList.add("product--name")
+// Création du contenu HTML de la page produit //     
 
-    div = document.createElement("div");
-    document.getElementById("product_content").appendChild(div);
-    div.classList.add("product--container");
-    
+nom = document.createElement("h1");
+nom.textContent = data.name;
+document.getElementById("product_content").appendChild(nom);
+nom.classList.add("product--name")
+
+div = document.createElement("div");
+document.getElementById("product_content").appendChild(div);
+div.classList.add("product--container");
+
     img = document.createElement("img");
     img.src = data.imageUrl;
     img.classList.add("product--imagestyle");
@@ -29,27 +34,63 @@ fetch ("http://localhost:3000/api/cameras/"+ id)
     description.classList.add("product--description");
     div.appendChild(description);
 
-    price = document.createElement("p");
-    price.textContent = data.price/100;
-    price.classList.add("product--price")
-    div.appendChild(price);
+    selectprice = document.createElement("div");
+    document.getElementById("product_content").appendChild(selectprice);
+    selectprice.classList.add("product--selectprice")
 
+        select = document.createElement("select");
+        select.classList.add("product--lenses"); 
+        selectprice.appendChild(select);
+
+            for (let i = 0; i < data.lenses.length; i++) {
+                
+                option = document.createElement("option");
+                option.textContent = data.lenses[i];
+                option.setAttribute("value", data.lenses[i]);
+                select.appendChild(option);
+            }
+
+        price = document.createElement("p");
+        price.textContent = data.price/100;
+        price.classList.add("product--price");
+        selectprice.appendChild(price);
+
+    
     btncontainer = document.createElement("div");
     document.getElementById("product_content").appendChild(btncontainer)
     btncontainer.classList.add("btncontainer");
 
-    btn = document.createElement("button");
-    btn.innerHTML = "Ajouter au panier";
-    btncontainer.appendChild(btn);
-    btn.classList.add("container--addcartbtn");
+        btn = document.createElement("button");
+        btn.innerHTML = "Ajouter au panier";
+        btncontainer.appendChild(btn);
+        btn.classList.add("container--addcartbtn");
 
+        //LOCAL STORAGE// 
 
+        btn.addEventListener("click", ()=>{
     
+    let tableau = [];
+    let storage = localStorage.length+1;
+    let productstorage  = {
+        name : data.name,
+        price : data.price/100,
+        img : data.imageUrl,
+        lenses : select.value 
+    }
+    tableau.push(productstorage);
+
+        localStorage.setItem("panier"+storage, JSON.stringify(tableau));
+        
+
+            console.log(localStorage);
+
+        }) 
+        
 
 
 
 console.log(data);
 })
-//.catch(error => alert(error))
+.catch(error => alert(error))
 
     

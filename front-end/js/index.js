@@ -34,6 +34,7 @@ fetch('http://localhost:3000/api/cameras')
           nom = document.createElement("h2");
           nom.textContent = data[i].name;
           div.appendChild(nom);
+          nom.classList.add("product--title");
                     
           price = document.createElement("p");
           price.textContent = data[i].price/100;
