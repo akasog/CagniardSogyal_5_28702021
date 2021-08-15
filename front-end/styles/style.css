@@ -26,6 +26,11 @@
     align-items: center;
 }
 
+.navbar--container img {
+    width: 30px;
+    color: white
+}
+
 .navbar-toggler,
 .navbar-toggler:focus,
 .navbar-toggler:active {

@@ -2,53 +2,53 @@ fetch('http://localhost:3000/api/cameras')
   .then(response => response.json())
   .then(data =>{
       
-      let link; 
-      let figure; 
-      let img = new Image();
-      let div; 
-      let nom;
-      let description;
-      let price;
+  let link; 
+  let figure; 
+  let img = new Image();
+  let div; 
+  let nom;
+  let description;
+  let price;
 
 
-        for (let i = 0; i < data.length; i++) {
-        console.log(data[i].name);
+for (let i = 0; i < data.length; i++) {
+console.log(data[i].name);
+
+  figure = document.createElement("figure");
+  document.getElementById("list_content").appendChild(figure);
+  figure.classList.add("product", "product--cardsize");
+
+  link = document.createElement("a");
+  link.setAttribute("href", "produit.html?id="+ data[i]._id);
+  figure.appendChild(link);
+
+  img = document.createElement("img");
+  img.src = data[i].imageUrl;
+  img.classList.add("product--imagestyle");
+  link.appendChild(img);
+
+  div = document.createElement("div");
+  div.classList.add("title--price", "product--flexmain");
+  link.appendChild(div);
+
+  nom = document.createElement("h2");
+  nom.textContent = data[i].name;
+  div.appendChild(nom);
+  nom.classList.add("product--title");
           
-          figure = document.createElement("figure");
-          document.getElementById("list_content").appendChild(figure);
-          figure.classList.add("product", "product--cardsize");
+  price = document.createElement("p");
+  price.textContent = data[i].price/100;
+  price.classList.add("product--price");
+  div.appendChild(price);
 
-          link = document.createElement("a");
-          link.setAttribute("href", "produit.html?id="+ data[i]._id);
-          figure.appendChild(link);
+  description = document.createElement("p");
+  description.textContent = data[i].description;
+  description.classList.add("product--description");
+  link.appendChild(description);
 
-          img = document.createElement("img");
-          img.src = data[i].imageUrl;
-          img.classList.add("product--imagestyle");
-          link.appendChild(img);
-          
-          div = document.createElement("div");
-          div.classList.add("title--price", "product--flexmain");
-          link.appendChild(div);
+  }
 
-          nom = document.createElement("h2");
-          nom.textContent = data[i].name;
-          div.appendChild(nom);
-          nom.classList.add("product--title");
-                    
-          price = document.createElement("p");
-          price.textContent = data[i].price/100;
-          price.classList.add("product--price");
-          div.appendChild(price);
-
-          description = document.createElement("p");
-          description.textContent = data[i].description;
-          description.classList.add("product--description");
-          link.appendChild(description);
-
-    }
-
-  console.log(data)
-  })
-  .catch(error => alert(error))
+console.log(data)
+})
+.catch(error => alert(error))
 
