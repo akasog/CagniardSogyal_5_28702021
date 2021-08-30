@@ -37,7 +37,7 @@ console.log(data[i].name);
   nom.classList.add("product--title");
           
   price = document.createElement("p");
-  price.textContent = data[i].price/100;
+  price.textContent = data[i].price/100 + ("€");
   price.classList.add("product--price");
   div.appendChild(price);
 

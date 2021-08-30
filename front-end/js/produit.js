@@ -51,7 +51,7 @@ for (let i = 0; i < data.lenses.length; i++) {
 }
 
 price = document.createElement("p");
-price.textContent = data.price/100;
+price.textContent = data.price/100 + ("€");
 price.classList.add("product--price");
 selectprice.appendChild(price);
 

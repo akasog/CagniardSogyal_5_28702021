@@ -25,6 +25,13 @@ let tdremove
 let removebtn
 let textremove
 
+// Formulaire coordonées client // 
+let contactdiv
+let contacttitle
+let contact
+let inputform
+let inputname
+
 
 title = document.createElement("h2");
 title.textContent = ("Votre panier");
@@ -73,12 +80,6 @@ table.appendChild(tbody);
         td.innerHTML = "Prix";
         td.classList.add("headtable")
         tr.appendChild(td);
-    
-        orderbtn = document.createElement("button");
-        orderbtn.innerHTML = "Commander";                               //Bouton "commander" qui est affiché lorsqu'un élément est présent dans le panier                 
-        cart.appendChild(orderbtn);
-        orderbtn.classList.add("order--btn");
-
 
     let total = 0
     
@@ -116,12 +117,12 @@ table.appendChild(tbody);
     tr.appendChild(tdprice);
 
     price = document.createElement("p");
-    price.textContent = cartproduct[i].price;
+    price.textContent = cartproduct[i].price+("€");
     tdprice.appendChild(price);
     total = total + cartproduct[i].price
 
     
-        // Création du bouton pour supprimer un élément du panier //
+    // Création du bouton pour supprimer un élément du panier //
     
     tdremove = document.createElement("td");
     tdremove.classList.add("removecontainer")
@@ -162,14 +163,82 @@ td.classList.add("containertotal");
 tr.appendChild(td);
 
 td = document.createElement("td");
-td.innerHTML = ("");
+td.classList.add("emptytd");
+tr.appendChild(td);
+
+td = document.createElement("td");
+td.classList.add("emptytd");
+tr.appendChild(td);
+
+td = document.createElement("td");
+td.innerHTML = total + ("€");
 td.classList.add("calcul");
 tr.appendChild(td);
 
 // Formulaire coordonées client // 
+contacttitle = document.createElement("h2");
+contacttitle.innerHTML = ("Vos coordonnées : ");
+document.getElementById("cart").appendChild(contacttitle);
 
+contactdiv = document.createElement("div");
+contactdiv.classList.add("contactdiv");
+document.getElementById("cart").appendChild(contactdiv);
 
+contact = document.createElement("form");
+contact.classList.add("form");
+contactdiv.appendChild(contact);
 
+//  Input utilisateur // 
+inputname = document.createElement("p");
+inputname.innerHTML = ("Nom");
+contact.appendChild(inputname);
+
+inputform = document.createElement("input");
+inputform.classList.add("lastname")
+inputform.setAttribute("type", "text");
+contact.appendChild(inputform);
+
+inputname = document.createElement("p");
+inputname.innerHTML = ("Prénom");
+contact.appendChild(inputname);
+
+inputform = document.createElement("input");
+inputform.classList.add("firstname")
+inputform.setAttribute("type", "text");
+contact.appendChild(inputform);
+
+inputname = document.createElement("p");
+inputname.innerHTML = ("Adresse");
+contact.appendChild(inputname);
+
+inputform = document.createElement("input");
+inputform.classList.add("adress")
+inputform.setAttribute("type", "text");
+contact.appendChild(inputform);
+
+inputname = document.createElement("p");
+inputname.innerHTML = ("Ville");
+contact.appendChild(inputname);
+
+inputform = document.createElement("input");
+inputform.classList.add("city")
+inputform.setAttribute("type", "text");
+contact.appendChild(inputform);
+
+inputname = document.createElement("p");
+inputname.innerHTML = ("E-mail");
+contact.appendChild(inputname);
+
+inputform = document.createElement("input");
+inputform.classList.add("email")
+inputform.setAttribute("type", "email");
+contact.appendChild(inputform);
+
+// Bouton commander 
+orderbtn = document.createElement("button");
+        orderbtn.innerHTML = "Commander";                                           
+        cart.appendChild(orderbtn);
+        orderbtn.classList.add("order--btn");
 
 
 }
