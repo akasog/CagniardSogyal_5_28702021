@@ -45,7 +45,7 @@ selectprice.appendChild(select);
 for (let i = 0; i < data.lenses.length; i++) {
     
     option = document.createElement("option");
-    option.textContent = data.lenses[i];
+    option.textContent = data.lenses[i];                     //Boucle qui permet de récuperer les différents types de lentilles disponible
     option.setAttribute("value", data.lenses[i]);
     select.appendChild(option);
 }
@@ -72,9 +72,10 @@ btn.addEventListener("click", ()=>{
     let tableau;
     let productstorage  = {
     name : data.name,
-    price : data.price/100,
+    price : data.price/100,                                 
     img : data.imageUrl,
-    lenses : select.value 
+    lenses : select.value,
+    productId :  data._id          // Ajout ID produit 
     }
 
     if (localStorage.getItem("panier")===null) {

@@ -1,34 +1,89 @@
+/*STYLE PANIER*/ 
+
+/* Centrer éléments page panier */
 #cart {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: center;                
     min-height: calc(100vh - 320px);
-    border: 6px double #BEA25A ;
-    margin: 10px;
+    margin: 20px;
 }
 
+
+
+/* Style panier vide */
 .emptycart {
     margin-top: 190px;
-    width: 100%;
+    width: 100%;                
+    border: 1px solid #BEA25A;
+    border-radius: 10px;
+    color: #212529;
+    padding: 15px;
     font-weight: 800;
-    text-transform: ;
 }
 
 #cart h2 {
-    margin-top: 30px;
+    margin-top: 30px; 
+}
+
+th {
 }
 
 tr {
 }
 
-
 td {
-    display: flex;
-    flex-direction: column;
-    margin: 15px 0px 15px 0px;
+    padding: 15px 10px 0px 10px;
+    border: 2px solid lightgrey;
 }
 
-.cart--img {
-    width: 150px;
-    margin-right: 30px;
+.headtable {
+    font-weight: 600;
+    padding : 5px;
+    text-align: center;
 }
+
+.quantity {
+    text-align: center;
+}
+
+.removecontainer {
+    border: none;
+}
+
+.removebtn {
+    width: 20px;
+    height: 20px;   /* Style bouton supprimer */
+    margin-bottom: 15px;
+    border: none;
+}
+
+.x {
+    font-weight: 700;
+    color: red;
+}
+
+.containertotal {
+    padding-bottom: 10px;
+}
+
+
+/* Bouton commander */ 
+
+.order--btn {
+    display: inline-block;
+    background-color: #BEA25A;
+    border-radius: 10px;
+    color: #FFF;;
+    border: 2px solid #BEA25A;
+    text-align: center;
+    font-size: 20px;
+    padding: 15px;
+    margin-top: 20px;
+    width: 100%;
+    max-width: 100%;
+    -moz-transition: all 0.2s;
+    -webkit-transition: all 0.2s;
+    transition: all 0.2s;
+}
+
