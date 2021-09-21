@@ -85,6 +85,10 @@ td {
 }
 
 /* Bouton commander */ 
+.linkbtn {
+    width: 100%;
+    padding: 15px;
+}
 
 .order--btn {
     display: inline-block;
@@ -122,5 +126,5 @@ input {
     color: red;
     font-weight: 800;
     font-size: 0.7rem;
-    padding-top: 10px;
+    padding-top: 15px;
 }

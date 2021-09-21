@@ -2,7 +2,7 @@ let cartproduct = JSON.parse(localStorage.getItem("panier"));
 console.log(cartproduct);
 
 // structure panier // 
-let emptycart
+let emptyCart
 let title
 let table
 let tbody
@@ -10,34 +10,31 @@ let tr
 let td
 let th
 let lense
-let orderbtn
+let linkOrderBtn
+let orderBtn
 
 
 // éléments panier //  
-let tdname
-let tdlenses
-let tdquantity
-let tdprice
+let tdName
+let tdLenses
+let tdQuantity
+let tdPrice
 let quantity
 
 // Supression élément panier //
-let tdremove
-let removebtn
-let textremove
+let tdRemove
+let removeBtn
+let textRemove
 
 // Formulaire coordonées client // 
-let contactdiv
-let contacttitle
+let contactDiv
+let contactTitle
 let contact
-let inputform
-let inputname
+let inputForm
+let inputName
 
 // erreurs 
-let error1
-let error2
-let error3
-let error4
-let error5
+let error
 
 
 
@@ -56,10 +53,10 @@ table.appendChild(tbody);
 //Affiche un message lorsque le panier est vide
 
     if ((cartproduct===null)||(cartproduct.length==0)) {                                   
-        emptycart = document.createElement("p");
-        emptycart.textContent = ("Votre panier est vide...")
-        emptycart.classList.add("emptycart")
-        tbody.appendChild(emptycart);
+        emptyCart = document.createElement("p");
+        emptyCart.textContent = ("Votre panier est vide...")
+        emptyCart.classList.add("emptycart")
+        tbody.appendChild(emptyCart);
     }
     else {
 
@@ -98,54 +95,54 @@ table.appendChild(tbody);
             tr.classList.add("itemRecap");
             tbody.appendChild(tr);
             
-            tdname = document.createElement("td");
-            tr.appendChild(tdname);
+            tdName = document.createElement("td");
+            tr.appendChild(tdName);
 
             nom = document.createElement("p");
             nom.textContent = cartproduct[i].name;
-            tdname.appendChild(nom);
+            tdName.appendChild(nom);
 
-            tdlenses = document.createElement("td");
-            tr.appendChild(tdlenses);
+            tdLenses = document.createElement("td");
+            tr.appendChild(tdLenses);
 
             lense = document.createElement("p");
             lense.textContent = cartproduct[i].lenses;
-            tdlenses.appendChild(lense)
+            tdLenses.appendChild(lense)
 
-            tdquantity = document.createElement("td");
-            tr.appendChild(tdquantity);
+            tdQuantity = document.createElement("td");
+            tr.appendChild(tdQuantity);
 
             quantity = document.createElement("p");
             quantity.textContent = ("1");
             quantity.classList.add("quantity")
-            tdquantity.appendChild(quantity);
+            tdQuantity.appendChild(quantity);
 
-            tdprice = document.createElement("td");
-            tr.appendChild(tdprice);
+            tdPrice = document.createElement("td");
+            tr.appendChild(tdPrice);
 
             price = document.createElement("p");
             price.textContent = cartproduct[i].price+("€");
-            tdprice.appendChild(price);
+            tdPrice.appendChild(price);
             total = total + cartproduct[i].price
 
     
             // Création du bouton pour supprimer un élément du panier //
             
-            tdremove = document.createElement("td");
-            tdremove.classList.add("removecontainer")
-            tr.appendChild(tdremove);
+            tdRemove = document.createElement("td");
+            tdRemove.classList.add("removecontainer")
+            tr.appendChild(tdRemove);
 
-            removebtn = document.createElement("button");
-            removebtn.classList.add("removebtn");
-            removebtn.setAttribute("id", i);
-            tdremove.appendChild(removebtn);
+            removeBtn = document.createElement("button");
+            removeBtn.classList.add("removebtn");
+            removeBtn.setAttribute("id", i);
+            tdRemove.appendChild(removeBtn);
 
-            textremove = document.createElement("p");
-            textremove.classList.add("x")
-            textremove.innerHTML = ("X")
-            removebtn.appendChild(textremove);
+            textRemove = document.createElement("p");
+            textRemove.classList.add("x")
+            textRemove.innerHTML = ("X")
+            removeBtn.appendChild(textRemove);
 
-            removebtn.addEventListener("click", (e)=>{
+            removeBtn.addEventListener("click", (e)=>{
             cartproduct.splice(e.path[1].id, 1);
             localStorage.setItem("panier", JSON.stringify(cartproduct));
             document.location.reload();
@@ -181,108 +178,99 @@ table.appendChild(tbody);
         td.innerHTML = total + ("€");
         td.classList.add("calcul");
         tr.appendChild(td);
+        localStorage.setItem("total", total + ("€"));
 
         // Formulaire coordonées client // 
-        contacttitle = document.createElement("h2");
-        contacttitle.innerHTML = ("Vos coordonnées : ");
-        document.getElementById("cart").appendChild(contacttitle);
+        contactTitle = document.createElement("h2");
+        contactTitle.innerHTML = ("Vos coordonnées : ");
+        document.getElementById("cart").appendChild(contactTitle);
 
-        contactdiv = document.createElement("div");
-        contactdiv.classList.add("contactdiv");
-        document.getElementById("cart").appendChild(contactdiv);
+        contactDiv = document.createElement("div");
+        contactDiv.classList.add("contactdiv");
+        document.getElementById("cart").appendChild(contactDiv);
 
         contact = document.createElement("form");
         contact.id = "myform";
         contact.classList.add("form");
-        contactdiv.appendChild(contact);
+        contactDiv.appendChild(contact);
 
         //  Input utilisateur // 
-        inputname = document.createElement("p");
-        inputname.innerHTML = ("Nom");
-        contact.appendChild(inputname);
+        inputName = document.createElement("p");
+        inputName.innerHTML = ("Nom");
+        contact.appendChild(inputName);
 
-        inputform = document.createElement("input");
-        inputform.classList.add("lastname")
-        inputform.setAttribute("type", "text");
-        inputform.setAttribute("placeholder", "Ex : Dupont");
-        contact.appendChild(inputform);
+        inputForm = document.createElement("input");
+        inputForm.classList.add("lastname")
+        inputForm.setAttribute("type", "text");
+        inputForm.setAttribute("placeholder", "Ex : Dupont");
+        contact.appendChild(inputForm);
 
-        error1 = document.createElement("p");
-        error1.classList.add("erreur");
-        contact.appendChild(error1);
+        inputName = document.createElement("p");
+        inputName.innerHTML = ("Prénom");
+        contact.appendChild(inputName);
 
-        inputname = document.createElement("p");
-        inputname.innerHTML = ("Prénom");
-        contact.appendChild(inputname);
+        inputForm = document.createElement("input");
+        inputForm.classList.add("firstname")
+        inputForm.setAttribute("type", "text");
+        inputForm.setAttribute("placeholder", "Ex : Pierre");
+        contact.appendChild(inputForm);
 
-        inputform = document.createElement("input");
-        inputform.classList.add("firstname")
-        inputform.setAttribute("type", "text");
-        inputform.setAttribute("placeholder", "Ex : Pierre");
-        contact.appendChild(inputform);
+        inputName = document.createElement("p");
+        inputName.innerHTML = ("Adresse");
+        contact.appendChild(inputName);
 
-        error2 = document.createElement("p");
-        error2.classList.add("erreur");
-        contact.appendChild(error2);
+        inputForm = document.createElement("input");
+        inputForm.classList.add("address")
+        inputForm.setAttribute("type", "text");
+        inputForm.setAttribute("placeholder", "Ex : 1 place de la fraternité");
+        contact.appendChild(inputForm);
 
-        inputname = document.createElement("p");
-        inputname.innerHTML = ("Adresse");
-        contact.appendChild(inputname);
+        inputName = document.createElement("p");
+        inputName.innerHTML = ("Ville");
+        contact.appendChild(inputName);
 
-        inputform = document.createElement("input");
-        inputform.classList.add("address")
-        inputform.setAttribute("type", "text");
-        inputform.setAttribute("placeholder", "Ex : 1 place de la fraternité");
-        contact.appendChild(inputform);
+        inputForm = document.createElement("input");
+        inputForm.classList.add("city")
+        inputForm.setAttribute("type", "text");
+        inputForm.setAttribute("placeholder", "Ex : Apt");
+        contact.appendChild(inputForm);
 
-        error3 = document.createElement("p");
-        error3.classList.add("erreur");
-        contact.appendChild(error3);
+        inputName = document.createElement("p");
+        inputName.innerHTML = ("E-mail");
+        contact.appendChild(inputName);
 
-        inputname = document.createElement("p");
-        inputname.innerHTML = ("Ville");
-        contact.appendChild(inputname);
+        inputForm = document.createElement("input");
+        inputForm.classList.add("email")
+        inputForm.setAttribute("type", "email");
+        inputForm.setAttribute("placeholder", "Ex : pierredupont@gmail.com");
+        contact.appendChild(inputForm);
 
-        inputform = document.createElement("input");
-        inputform.classList.add("city")
-        inputform.setAttribute("type", "text");
-        inputform.setAttribute("placeholder", "Ex : Apt");
-        contact.appendChild(inputform);
-
-        error4 = document.createElement("p");
-        error4.classList.add("erreur");
-        contact.appendChild(error4);
-
-        inputname = document.createElement("p");
-        inputname.innerHTML = ("E-mail");
-        contact.appendChild(inputname);
-
-        inputform = document.createElement("input");
-        inputform.classList.add("email")
-        inputform.setAttribute("type", "email");
-        inputform.setAttribute("placeholder", "Ex : pierredupont@gmail.com");
-        contact.appendChild(inputform);
-
-        error5 = document.createElement("p");
-        error5.classList.add("erreur");
-        contact.appendChild(error5);
+        error = document.createElement("p");
+        error.classList.add("erreur");
+        contact.appendChild(error);
 
 
         // Bouton commander 
-        orderbtn = document.createElement("button");
-        orderbtn.innerHTML = "Commander";   
-        orderbtn.classList.add("order--btn");         
-        orderbtn.setAttribute("type", "submit");                               
-        cart.appendChild(orderbtn);
 
-    orderbtn.addEventListener("click",()=>{
+        linkOrderBtn = document.createElement("a");
+        linkOrderBtn.classList.add("linkbtn");
+        cart.appendChild(linkOrderBtn);
+
+
+        orderBtn = document.createElement("button");
+        orderBtn.innerHTML = "Commander";   
+        orderBtn.classList.add("order--btn");         
+        orderBtn.setAttribute("type", "submit");                               
+        linkOrderBtn.appendChild(orderBtn);
+
+    orderBtn.addEventListener("click",()=>{
         let nom = document.getElementsByClassName("lastname")[0].value;
         let prenom = document.getElementsByClassName("firstname")[0].value;
         let adresse = document.getElementsByClassName("address")[0].value;
         let ville = document.getElementsByClassName("city")[0].value;
         let email = document.getElementsByClassName("email")[0].value;
 
-        console.log(/^\w\D+$/.test(nom));                                       // TRIM MDN // OU 1 MIN 1 MAJ
+        console.log(/^\w\D+$/.test(nom));                                      
         console.log(/^\w\D+$/.test(prenom));
         console.log(/\w/.test(adresse))
         console.log(/^\w\D+$/.test(ville));
@@ -296,54 +284,19 @@ table.appendChild(tbody);
         let checkCity = /^\w\D+$/.test(ville);
         let checkMail = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email);
         
-     /*   if (checkLastName) {
-            console.log("check last name ok")            // IMBRIQUER LES IF 
-            if (checkFirstName) {
-                console.log("check first name ok ")
-                if (checkAddress) {
-                    console.log("check address ok") 
-                    if (checkCity) {
-                        console.log("check city name ok")
-                        if (checkMail) {
-                            console.log("check mail name ok") 
-                        } else {
-                            console.log("check mail pas ok")
-                            error5.innerHTML = "Entrez un e-mail valide";
-                        } 
-                    } else {
-                        console.log("check city name pas ok") 
-                        error4.innerHTML = "Entrez un nom de ville valide";
-                    }
-                } else {
-                    console.log("check address pas ok") 
-                    error3.innerHTML = "Entrez une adresse postale valide";
-                }
-            } else {
-                console.log("check first name pas ok ")
-                error2.innerHTML = "Entrez un prénom valide";
-            }
-        }
-        else {
-            console.log("check last name pas ok")
-            error1.innerHTML = "Entrez un nom valide";
-        } */
         
          if (checkLastName && checkFirstName && checkAddress && checkCity && checkMail) {
             console.log("true");
-            error5.innerHTML = ("");
-        } else {
-            console.log("false");
-            error5.innerHTML = "Un ou plusieurs champs ne sont pas valide(s)";
-        }  
+            error.innerHTML = ("");
 
-        let contact = [
-            lastName = nom,
-            firstName = prenom,
-            address = adresse,
-            city = ville,
-            email = email
-        ];
+        let contact = new Object();
+        contact.firstName = prenom;
+        contact.lastName = nom;
+        contact.address = adresse;
+        contact.city = ville;
+        contact.email = email;
 
+        console.log(contact)
 
         let cartItem = JSON.parse(localStorage.getItem("panier"));
         let products = [];
@@ -351,17 +304,38 @@ table.appendChild(tbody);
         for (let i = 0; i < cartItem.length; i++) {
             products.push(cartItem[i].productId)
         }
-        products.push(contact);
-
+        
         console.log(products);
+        let order = {
+            contact, 
+            products,
+        }
 
         /// FETCH POST ENVOIE SERVEUR 
-        fetch(router.post("http://localhost:3000/api/cameras/order"), {
+
+       fetch("http://localhost:3000/api/cameras/order", {
             method: "POST",
-            body: JSON.stringify(products),
-        }
-    })
+            body: JSON.stringify(order),
+            headers: {"Content-Type": "Application/Json"}
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log(data);
+            console.log(data.orderId);
+            localStorage.setItem("confirmation", data.orderId);
+            localStorage.removeItem("panier");
+            document.location.href = "confirmation.html";
+        });  
+
+
+        } else {
+            console.log("false");
+            error.innerHTML = "Un ou plusieurs champs ne sont pas valide(s)";
+        }  
+  
+    }) 
 }
+
 
 
 

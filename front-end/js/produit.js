@@ -7,9 +7,9 @@ fetch ("http://localhost:3000/api/cameras/"+ id)
 .then(data => {
     
     let div
-    let btncontainer 
+    let btnContainer 
     let btn 
-    let selectprice
+    let selectPrice
     let select
     let option
 
@@ -34,13 +34,13 @@ description.textContent = data.description;
 description.classList.add("product--description");
 div.appendChild(description);
 
-selectprice = document.createElement("div");
-document.getElementById("product_content").appendChild(selectprice);
-selectprice.classList.add("product--selectprice");
+selectPrice = document.createElement("div");
+document.getElementById("product_content").appendChild(selectPrice);
+selectPrice.classList.add("product--selectprice");
 
 select = document.createElement("select");
 select.classList.add("product--lenses"); 
-selectprice.appendChild(select);
+selectPrice.appendChild(select);
 
 for (let i = 0; i < data.lenses.length; i++) {
     
@@ -53,16 +53,16 @@ for (let i = 0; i < data.lenses.length; i++) {
 price = document.createElement("p");
 price.textContent = data.price/100 + ("€");
 price.classList.add("product--price");
-selectprice.appendChild(price);
+selectPrice.appendChild(price);
 
     
-btncontainer = document.createElement("div");
-document.getElementById("product_content").appendChild(btncontainer)
-btncontainer.classList.add("btncontainer");
+btnContainer = document.createElement("div");
+document.getElementById("product_content").appendChild(btnContainer)
+btnContainer.classList.add("btncontainer");
 
 btn = document.createElement("button");
 btn.innerHTML = "Ajouter au panier";
-btncontainer.appendChild(btn);
+btnContainer.appendChild(btn);
 btn.classList.add("container--addcartbtn");
 
 //LOCAL STORAGE// 
