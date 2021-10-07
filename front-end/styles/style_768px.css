@@ -1,0 +1,95 @@
+@media screen and (min-width: 768px) {
+    body {
+        margin: auto;
+    }
+
+    /* Page d'accueil */
+
+    #list_content {
+        display: flex;
+        flex-flow: wrap;
+        justify-content: space-around;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    .product--cardsize {
+        object-fit: cover;
+        width: 350px;
+    }
+
+    .product--imagestyle {
+    }
+
+    /* Page produit */ 
+
+    .product--container {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+
+    
+    .product--description {
+        font-size: 1rem;
+    }
+
+    .product--lenses {
+        margin: 0px;
+    }
+
+    .product--selectprice {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+
+    .container--addcartbtn {
+        margin: 35px;
+    }
+
+    /* Page panier */ 
+
+    .cart--table {
+        width: 100%;
+        margin-left: 70px;
+    }
+
+    .contactdiv {
+        width: 100%;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    .emptycart {
+        text-align: center;
+        margin-left: -35px;
+    }
+
+    .itemRecap {
+        text-align: center;
+    }
+
+    .containertotal, .calcul {
+        text-align: center;
+    }
+
+    input {
+        width: 100%;
+    }
+
+    /* page de confirmation */ 
+
+    #confirm_order {
+        padding: 40px;
+    }
+
+    .confirmtext {
+        margin-top: 30px;
+    }
+
+    .erreur {
+        font-size: 0.8rem;
+        width: 100%;
+        text-align: center;
+    }
+
+}

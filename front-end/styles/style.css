@@ -59,8 +59,9 @@ a {
 }
 
 .product--cardsize {
-    width: 305px;
+    width: 100%;
     padding-left: 10px;
+    padding-right: 10px;
     text-decoration: none;
     border: none;
 }
@@ -68,7 +69,7 @@ a {
 .product--imagestyle {
     display: block;
     margin: auto;
-    width: 300px;
+    width: 100%;
     border-radius: 10px;
 }
 

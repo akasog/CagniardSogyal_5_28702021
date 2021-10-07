@@ -57,6 +57,7 @@ table.appendChild(tbody);
         emptyCart.textContent = ("Votre panier est vide...")
         emptyCart.classList.add("emptycart")
         tbody.appendChild(emptyCart);
+        title.textContent = ("");
     }
     else {
 
