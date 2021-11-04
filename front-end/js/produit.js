@@ -1,6 +1,5 @@
 let params = (new URL(document.location)).searchParams;
 let id = params.get('id'); 
-console.log(id)
 
 fetch ("http://localhost:3000/api/cameras/"+ id)
 .then(response => response.json())
@@ -88,14 +87,8 @@ btn.addEventListener("click", ()=>{
     tableau.push(productstorage);
 
     localStorage.setItem("panier", JSON.stringify(tableau));
-    
-
-        console.log(localStorage);
-        console.log(tableau.length);
 
     }) 
-        
-console.log(data);
 })
 .catch(error => alert(error));
 

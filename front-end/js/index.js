@@ -12,7 +12,6 @@ fetch('http://localhost:3000/api/cameras')
 
 
 for (let i = 0; i < data.length; i++) {
-console.log(data[i].name);
 
   figure = document.createElement("figure");
   document.getElementById("list_content").appendChild(figure);
@@ -48,7 +47,6 @@ console.log(data[i].name);
 
   }
 
-console.log(data)
 })
 .catch(error => alert(error))
 

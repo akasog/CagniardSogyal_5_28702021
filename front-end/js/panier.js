@@ -1,5 +1,4 @@
 let cartproduct = JSON.parse(localStorage.getItem("panier"));
-console.log(cartproduct);
 
 // structure panier // 
 let emptyCart
@@ -148,13 +147,9 @@ table.appendChild(tbody);
             localStorage.setItem("panier", JSON.stringify(cartproduct));
             document.location.reload();
 
-            console.log(e);
-            console.log(e.path[1].id);
             }) 
 
         }       
-
-        console.log(total);
 
         // BAS DU TABLEAU RECAP PANIER // 
 
@@ -182,6 +177,7 @@ table.appendChild(tbody);
         localStorage.setItem("total", total + ("€"));
 
         // Formulaire coordonées client // 
+        
         contactTitle = document.createElement("h2");
         contactTitle.innerHTML = ("Vos coordonnées : ");
         document.getElementById("cart").appendChild(contactTitle);
@@ -271,13 +267,7 @@ table.appendChild(tbody);
         let ville = document.getElementsByClassName("city")[0].value;
         let email = document.getElementsByClassName("email")[0].value;
 
-        console.log(/^\w\D+$/.test(nom));                                      
-        console.log(/^\w\D+$/.test(prenom));
-        console.log(/\w/.test(adresse))
-        console.log(/^\w\D+$/.test(ville));
-        console.log(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email));
-        console.log(nom, prenom, adresse, ville, email,);
-
+//RegEx visant à vérifier le contenu saisis dans le champs de saisis du formulaire//
 
         let checkLastName = /^\w\D+$/.test(nom);
         let checkFirstName = /^\w\D+$/.test(prenom);
@@ -287,7 +277,6 @@ table.appendChild(tbody);
         
         
          if (checkLastName && checkFirstName && checkAddress && checkCity && checkMail) {
-            console.log("true");
             error.innerHTML = ("");
 
         let contact = new Object();
@@ -297,7 +286,6 @@ table.appendChild(tbody);
         contact.city = ville;
         contact.email = email;
 
-        console.log(contact)
 
         let cartItem = JSON.parse(localStorage.getItem("panier"));
         let products = [];
@@ -305,8 +293,7 @@ table.appendChild(tbody);
         for (let i = 0; i < cartItem.length; i++) {
             products.push(cartItem[i].productId)
         }
-        
-        console.log(products);
+
         let order = {
             contact, 
             products,
@@ -321,8 +308,6 @@ table.appendChild(tbody);
         })
         .then(response => response.json())
         .then(data => {
-            console.log(data);
-            console.log(data.orderId);
             localStorage.setItem("confirmation", data.orderId);
             localStorage.removeItem("panier");
             document.location.href = "confirmation.html";
@@ -330,7 +315,6 @@ table.appendChild(tbody);
 
 
         } else {
-            console.log("false");
             error.innerHTML = "Un ou plusieurs champs ne sont pas valide(s)";
         }  
   

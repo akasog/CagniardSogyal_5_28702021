@@ -1,8 +1,6 @@
 let orderId = localStorage.getItem("confirmation");
-console.log(orderId);
 
 let orderPrice = localStorage.getItem("total");
-console.log(orderPrice);
 
 let title
 let confirmContainer
