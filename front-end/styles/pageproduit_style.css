@@ -5,6 +5,10 @@ section {
     min-height: calc(100vh - 320px);
 }
 
+.navbar-nav {
+    display: flex;
+}
+
 .product--container{
     width: 100%;
     padding-left: 10px;
