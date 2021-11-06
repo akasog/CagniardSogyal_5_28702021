@@ -1,0 +1,47 @@
+@media screen and (min-width: 1024px) {
+    body {
+        margin: auto;
+    }
+
+    /* Page d'accueil */
+
+
+    .product--cardsize {
+        width: 450px;
+    }
+
+    .product--imagestyle {
+
+    }
+    
+    /* Page produit */ 
+
+    .product--container {
+        padding-right: 80px;
+        padding-left: 80px;
+    }
+
+    .product--description {
+        font-size: 1.1rem;
+    }
+
+    .product--selectprice {
+        padding-right: 80px;
+        padding-left: 80px;
+    }
+
+    .container--addcartbtn {
+        margin: 70px;
+    }
+
+    /* Page panier */ 
+
+    /* page de confirmation */ 
+
+    .erreur {
+        font-size: 0.8rem;
+        width: 100%;
+        text-align: center;
+    }
+
+}

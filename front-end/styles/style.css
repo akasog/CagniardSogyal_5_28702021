@@ -1,0 +1,112 @@
+/*HOMEPAGE*/ 
+
+.dancing {
+    font-family: "Dancing Script";
+}
+
+.titlecolor {
+    color: #BEA25A;
+    margin: 0px 30px;
+}
+
+.text-style {
+    font-style: italic;
+    opacity: 70%;
+}
+
+.stripe {
+    height: 2px;
+    width: 100%;
+    color: black;
+}
+
+.flex-hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar--container img {
+    width: 30px;
+    color: white
+}
+
+.navbar-toggler,
+.navbar-toggler:focus,
+.navbar-toggler:active {
+    border: none;
+    outline: none;
+}
+
+#list_content {
+    margin-top: 50px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.product--price {
+    font-weight: bold;
+    color: black;
+}
+
+.product--description {
+    font-style: italic;
+    color: black;
+    opacity: 70%;
+    font-size: 12px;
+}
+
+.product--cardsize {
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-decoration: none;
+    border: none;
+}
+
+.product--imagestyle {
+    display: block;
+    margin: auto;
+    width: 100%;
+    border-radius: 10px;
+}
+
+.title--price {
+    margin-top: 10px;
+}
+
+.product--flexmain {
+    display: flex;
+    justify-content: space-between;
+    color: black;
+}
+
+.footer {
+    background-color: #212529;
+    height: 100px;
+    padding-top: 10px;
+}
+
+.footer--list {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 0;
+    font-size: 0.9rem;
+}
+
+.footer--list li {
+    margin-bottom: 5px;
+}
+
+.footer--list a{
+    text-decoration: none;
+    color: white;
+}
+
+.footer--list a:hover{
+    font-weight: bold;
+}
+

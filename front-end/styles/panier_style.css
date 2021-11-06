@@ -1,0 +1,130 @@
+/*STYLE PANIER*/ 
+
+/* Centrer éléments page panier */
+#cart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;                
+    min-height: calc(100vh - 320px);
+    margin: 0px 0px 20px 0px;
+    padding: 0px 10px 0px 10px;
+}
+
+
+
+/* Style panier vide */
+.emptycart {
+    margin-top: 190px;
+    width: 100%;                
+    border: 1px solid #BEA25A;
+    border-radius: 10px;
+    color: #212529;
+    padding: 15px;
+    font-weight: 800;
+}
+
+#cart h2 {
+    margin-top: 30px; 
+}
+
+td {
+    padding: 15px 10px 0px 10px;
+    border: 2px solid lightgrey;
+}
+
+.cart--table {
+    margin: 10px 0px 0px 10px;
+}
+
+.headtable {
+    font-weight: 600;
+    padding : 5px;
+    text-align: center;
+}
+
+.itemRecap {
+    font-size: 0.7rem;
+}
+
+.quantity {
+    text-align: center;
+}
+
+.removecontainer {
+    border: none;
+}
+
+.removebtn {
+    width: 20px;
+    height: 20px;   /* Style bouton supprimer */
+    margin-bottom: 15px;
+    border: none;
+    background-color: white;
+}
+
+.x {
+    font-weight: 700;
+    color: red;
+}
+
+.totalPrice {
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+.containertotal {
+    padding-bottom: 10px;
+}
+
+.calcul {
+    padding-bottom: 10px;
+}
+
+.emptytd {
+    border: none;
+}
+
+/* Bouton commander */ 
+.linkbtn {
+    width: 100%;
+    padding: 15px;
+}
+
+.order--btn {
+    display: inline-block;
+    background-color: #BEA25A;
+    border-radius: 10px;
+    color: #FFF;;
+    border: 2px solid #BEA25A;
+    text-align: center;
+    font-size: 20px;
+    padding: 15px;
+    margin-top: 20px;
+    width: 100%;
+    max-width: 100%;
+    -moz-transition: all 0.2s;
+    -webkit-transition: all 0.2s;
+    transition: all 0.2s;
+}
+
+/* Formulaire */ 
+
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 10px;
+}
+
+input {
+    width: 250px;
+    margin: -5px 0px 10px 0px;
+}
+
+.erreur {
+    color: red;
+    font-weight: 800;
+    font-size: 0.7rem;
+    padding-top: 15px;
+}
