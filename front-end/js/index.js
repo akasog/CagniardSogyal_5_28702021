@@ -1,3 +1,5 @@
+// Fetch qui permet la récupération des élément présents dans l'API // 
+
 fetch('http://localhost:3000/api/cameras')
   .then(response => response.json())
   .then(data =>{
@@ -10,6 +12,7 @@ fetch('http://localhost:3000/api/cameras')
   let description;
   let price;
 
+// Boucle FOR qui itère la récupération des éléments jusqu'à ce que ceux ci soit tous affichés // 
 
 for (let i = 0; i < data.length; i++) {
 

@@ -1,3 +1,5 @@
+// Utilisation du JSON.parse pour traduire la chaine de caractère JSON en variable javascript manipulable // 
+
 let cartproduct = JSON.parse(localStorage.getItem("panier"));
 
 // structure panier // 
@@ -60,7 +62,7 @@ table.appendChild(tbody);
     }
     else {
 
-        // Affiche les le tableaux ainsi que les éléments présents dans le panier
+  // Affiche le tableaux ainsi que les éléments présents dans le panier
 
         tr = document.createElement("tr");
         tbody.appendChild(tr);
