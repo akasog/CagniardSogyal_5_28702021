@@ -6,7 +6,7 @@ fetch('http://localhost:3000/api/cameras')
       
 //Fonction qui permet l'execution et la création des éléments de la page d'accueil // 
 
-  createElement(data);
+  createProducts(data);
    
 })
 .catch(error => alert(error))

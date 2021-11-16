@@ -1,7 +1,6 @@
+//Fonction qui permet l'execution et la création des éléments de la page d'accueil // 
 
-function createElement(data) {
-    
-    // Fetch qui permet la récupération des élément présents dans l'API // 
+function createProducts(data) {
       
   let link; 
   let figure; 
@@ -49,3 +48,35 @@ for (let i = 0; i < data.length; i++) {
 
  }
 }
+
+
+
+// Confirmation de commande // 
+// Fonction qui créé la page de confirmation de commande // 
+
+function confirmOrder() {
+
+  let orderId = localStorage.getItem("confirmation");
+  
+  let orderPrice = localStorage.getItem("total");
+  
+  let title
+  let confirmContainer
+  let confirmText
+  
+  title = document.createElement("h2");
+  title.textContent = ("Merci pour votre commande!");
+  document.getElementById("confirm_order").appendChild(title);
+  
+  confirmContainer = document.createElement("div");
+  confirmContainer.id = ("confirm__container");
+  document.getElementById("confirm_order").appendChild(confirmContainer);
+  
+  confirmText = document.createElement("p");
+  confirmText.classList.add("confirmtext")
+  confirmText.textContent = ("Nous vous confirmons l'enregistrement de votre commande " + "« " + orderId + " »" + " d'un montant de " + orderPrice + "." + " En vous souhaitant une bonne réception de celle-ci. À bientôt sur Orinocam!");
+  document.getElementById("confirm__container").appendChild(confirmText);
+  
+   
+  }
+  
