@@ -4,7 +4,7 @@ fetch('http://localhost:3000/api/cameras')
   .then(response => response.json())
   .then(data =>{
       
-//Fonction qui permet l'execution et la création des éléments de la page d'accueil // 
+// Appel de la fonction qui permet l'execution et la création des éléments de la page d'accueil // 
 
   createProducts(data);
    
